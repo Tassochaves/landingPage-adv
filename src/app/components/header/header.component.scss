@@ -1,0 +1,112 @@
+@import "../../../styles/variables.scss";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+#header.header-scrolled,
+#header.header-inner-pages {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo a span {
+  color: $primary-color;
+}
+
+#header .logo img {
+  max-height: 60px;
+}
+
+
+@media (max-width: 992px) {
+
+  #header {
+
+    background: rgba(0, 0, 0, 0.9);
+  }
+  .nav-item{
+    width: 100%;
+
+    text-align: center;
+    justify-content: center;
+  }
+  .navbar-nav{
+
+    background-color: #fff;
+  }
+
+  .navbar-nav .nav-item a{
+    color: black;
+  }
+  .navbar-nav .nav-item a:hover{
+    background-color: $primary-color;
+    color: black;
+  }
+  .navbar-toggler{
+    background-color: #fff;
+  }
+
+  .nav-item .btn-whatsapp{
+    width: 90% !important;
+    color: #fff !important;
+    background-color: green !important;
+  }
+
+  .nav-item .btn-whatsapp:hover{
+    color: $primary-color !important;
+    background-color: green !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar a,
+.navbar a:focus {
+  padding: 10px 0 10px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: $primary-color;
+}
+
+.nav-item .btn-whatsapp{
+  background-color: green !important;
+  margin: 1.0rem;
+  padding: 0.5rem;
+}
+
+.nav-item .btn-whatsapp:hover{
+  color: $primary-color !important;
+  background-color: green !important;
+}
