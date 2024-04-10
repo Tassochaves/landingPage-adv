@@ -4,6 +4,7 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { ContactComponent } from "../../components/contact/contact.component";
 import { AreaAtuacaoComponent } from "../../components/area-atuacao/area-atuacao.component";
 import { AreaAtuacaoDestaqueComponent } from "../../components/area-atuacao-destaque/area-atuacao-destaque.component";
+import { environment } from '../../../environments/environment.development';
 
 @Component({
     selector: 'app-home',
@@ -13,5 +14,5 @@ import { AreaAtuacaoDestaqueComponent } from "../../components/area-atuacao-dest
     imports: [FooterComponent, HeaderComponent, ContactComponent, AreaAtuacaoComponent, AreaAtuacaoDestaqueComponent]
 })
 export class HomeComponent {
-
+  whatsapp: string = environment.API_WHATSAPP;
 }
