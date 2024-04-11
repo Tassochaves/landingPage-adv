@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements AfterViewInit {
+  whatsapp: string = environment.API_WHATSAPP;
 
   @ViewChild('header') public header!: ElementRef;
   ngAfterViewInit(): void {

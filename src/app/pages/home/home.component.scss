@@ -127,7 +127,10 @@
   top: -3px;
   color: $primary-color;
 }
-
+.carouselStyle{
+  margin-left: 25px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+}
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
@@ -289,6 +292,7 @@
   content: "/";
 }
 
+//MOBILE
 @media (max-width: 992px) {
   .breadcrumbs {
     margin-top: 68px;
@@ -304,5 +308,10 @@
 
   .breadcrumbs ol li {
     display: inline-block;
+  }
+
+  .carouselStyle{
+    margin-left: 0;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
   }
 }

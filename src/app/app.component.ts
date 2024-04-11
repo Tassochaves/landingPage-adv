@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
+
 
 @Component({
     selector: 'app-root',
@@ -9,6 +10,6 @@ import { HomeComponent } from "./pages/home/home.component";
     styleUrl: './app.component.scss',
     imports: [RouterOutlet, HomeComponent]
 })
-export class AppComponent {
-  title = 'landpage-adv';
+export class AppComponent{
+
 }
