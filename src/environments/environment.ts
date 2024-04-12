@@ -1,5 +1,5 @@
 export const environment = {
-  ACCESS_TOKEN: 'sP8wEyL-My6C_24YfmSTSMarHMGCvM6rFIHX2eNz1sA',
-  API_CONTENTFUL: 'https://cdn.contentful.com/spaces/ix1luph72omg/environments/master/entries/5N3kgBUJOhoxaZmXoaLkgC',
-  API_WHATSAPP: 'https://api.whatsapp.com/send?phone=SEUNUMERO'
+  SPACE_ID: 'ix1luph72omg',
+  ACESS_TOKEN: '5J__1dknCf1N0CYT48i9tWUmsBnLMt5m81fC9NzNCgY',
+  API_WHATSAPP: 'https://api.whatsapp.com/send?phone='
 };

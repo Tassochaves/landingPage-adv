@@ -1,16 +1,16 @@
 <app-header></app-header>
 
 <!-- ======= Hero Section ======= -->
-<section *ngIf="meusDadosApi$ | async as meusDados" id="hero" class="d-flex align-items-center justify-content-center">
+<section id="hero" class="d-flex align-items-center justify-content-center">
   <div class="container" data-aos="fade-up">
 
-    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+    <div *ngIf="inforProf$ | async as inforProf" class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
       <div class="col-xl-6 col-lg-8">
         <h3><span>Bem vindo a</span></h3>
-        <h1 *ngFor="let meusDados of meusDados.items">{{meusDados.fields.nomeAdvogado}}</h1>
+        <h1>{{inforProf.fields.nomeAdvogado}}</h1>
         <h2>Advocacia Previdenciária</h2>
         <div class="btnMain">
-          <a href="{{whatsapp}}" class="btn btn-lg get-started-btn" target="_blank">Falar com o Advogado</a>
+          <a href="{{whatsapp + inforProf.fields.whatsApp}}" class="btn btn-lg get-started-btn" target="_blank">Falar com o Advogado</a>
         </div>
       </div>
 

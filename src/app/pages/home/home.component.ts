@@ -10,6 +10,7 @@ import { ContentfullApiService } from '../../services/contentfull-api.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
     selector: 'app-home',
     standalone: true,
@@ -19,11 +20,17 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit{
   meusDadosApi$: Observable<any> | undefined;
+  inforProf$: Observable<any> | undefined;
+
+
   whatsapp: string = environment.API_WHATSAPP;
 
   constructor(private contenfullApi: ContentfullApiService){}
 
   ngOnInit(): void {
-    this.meusDadosApi$ = this.contenfullApi.obterDados();
+    // this.meusDadosApi$ = this.contenfullApi.obterDados();
+    this.inforProf$ = this.contenfullApi.obterDadosPorId('2ajUWvny6HtH4hPM48eQ76');
+    // console.log(this.contenfullApi.obterDadosPorCampos('ix1luph72omg'));
   }
+  
 }

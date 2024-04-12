@@ -19,4 +19,10 @@ export class ContentfullApiService {
     const promise = this.client.getEntries();
     return from(promise);
   }
+
+  obterDadosPorId(id: string){
+    const promise = this.client.getEntry(id);
+    console.log(promise);
+    return from(promise);
+  }
 }
