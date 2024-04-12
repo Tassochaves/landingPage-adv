@@ -3,18 +3,18 @@
   <p>Advogado</p>
 </div>
 
-<div class="container">
+<div *ngIf="meusDadosApi$ | async as meusDados" class="container">
   <img
     src="https://cdn.pixabay.com/photo/2015/07/20/12/57/ambassador-852766_1280.jpg"
     alt="adv" />
   <div class="container__text">
     <div class="texto-pc">
-      <h1 class="section-title">Dr. Agostinho Lima</h1>
+      <h1 class="section-title">Dr.</h1>
       <p>
         Seu advogado especialista em Direito Previdenciário
-      
+
         Com mais de 8 anos de experiência na área, ajudo você a:
-      
+
         Obter aposentadoria, pensão e outros benefícios previdenciários de forma rápida e segura;
         Resolver pendências e burocracias do INSS com eficiência e praticidade;
         Enfrentar recursos contra decisões do INSS com alto índice de sucesso;
@@ -31,9 +31,9 @@
   <h1 class="section-title">Agostinho Lima</h1>
   <p>
     Seu advogado especialista em Direito Previdenciário
-  
+
     Com mais de 8 anos de experiência na área, ajudo você a:
-  
+
     Obter aposentadoria, pensão e outros benefícios previdenciários de forma rápida e segura;
     Resolver pendências e burocracias do INSS com eficiência e praticidade;
     Enfrentar recursos contra decisões do INSS com alto índice de sucesso;
