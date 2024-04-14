@@ -17,7 +17,7 @@ $border-radius: 10px;
 .container {
   position: relative;
   display: grid;
-  grid-template-columns: 300px 600px;
+  grid-template-columns: 300px 800px;
   border-radius: $border-radius;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
 
@@ -35,7 +35,6 @@ $border-radius: 10px;
     border: none;
     outline: none;
     align-items: center;
-    background-color: $primary-color;
     color: $primary-color;
     padding: 22px 45px;
     font-size: 1.5rem;
@@ -60,7 +59,7 @@ $border-radius: 10px;
     width: 100%;
     display: block;
     text-align: center;
-    
+
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
   }
 

@@ -1,13 +1,12 @@
 import { Injectable, signal } from '@angular/core';
 import { createClient } from 'contentful';
 import { environment } from '../../environments/environment.development';
-import { from } from 'rxjs';
+import { Observable, from, map, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentfullApiService {
-
   constructor() { }
 
   private client = createClient({
@@ -15,14 +14,14 @@ export class ContentfullApiService {
     accessToken: environment.ACESS_TOKEN
   });
 
-  obterDados(){
+
+  obterDados(): Observable<any>{
     const promise = this.client.getEntries();
     return from(promise);
   }
 
   obterDadosPorId(id: string){
     const promise = this.client.getEntry(id);
-    console.log(promise);
     return from(promise);
   }
 }

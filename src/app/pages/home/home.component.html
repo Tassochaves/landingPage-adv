@@ -1,48 +1,36 @@
 <app-header></app-header>
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center justify-content-center">
+<section *ngIf="meusDadosApi$ | async as meusDadosApi" id="hero" class="d-flex align-items-center justify-content-center">
   <div class="container" data-aos="fade-up">
 
-    <div *ngIf="inforProf$ | async as inforProf" class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
       <div class="col-xl-6 col-lg-8">
         <h3><span>Bem vindo a</span></h3>
-        <h1>{{inforProf.fields.nomeAdvogado}}</h1>
+        <h1>Agostinho Lima</h1>
         <h2>Advocacia Previdenciária</h2>
         <div class="btnMain">
-          <a href="{{whatsapp + inforProf.fields.whatsApp}}" class="btn btn-lg get-started-btn" target="_blank">Falar com o Advogado</a>
+          <a href="{{whatsapp}}" class="btn btn-lg get-started-btn" target="_blank">Falar com o Advogado</a>
         </div>
       </div>
 
     </div>
 
     <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+      @for (meusDados of meusDadosApi.items; track $index) {
       <div class="col-xl-3 col-md-4">
         <div class="icon-box">
           <img width="48" height="48" src="https://img.icons8.com/fluency/48/scales.png" alt="scales"/>
-          <h3><a href="#dir_previdenciario">Direito Previdenciário</a></h3>
+          <h3><a href="#dir_previdenciario">{{meusDados.fields.nomeDaAreaDeAtuacao}}</a></h3>
         </div>
       </div>
-      <div class="col-xl-3 col-md-4">
-        <div class="icon-box">
-          <img width="48" height="48" src="https://img.icons8.com/fluency/48/scales.png" alt="scales"/>
-          <h3><a href="">Execução Fiscal</a></h3>
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-md-4">
-        <div class="icon-box">
-          <img width="48" height="48" src="https://img.icons8.com/fluency/48/scales.png" alt="scales"/>
-          <h3><a href="">Direito Tributário</a></h3>
-        </div>
-      </div>
+    }
     </div>
 
   </div>
 </section><!-- End Hero -->
 
 <main id="main">
-
   <app-area-atuacao-destaque></app-area-atuacao-destaque>
 
   <!-- ======= Seção sobre ======= -->
@@ -144,3 +132,6 @@
 <!-- End #main -->
 
 <app-footer></app-footer>
+<!-- <div *ngIf="meusDadosApi$ | async as meusDadosApi">
+<pre>{{meusDadosApi | json}}</pre>
+</div> -->

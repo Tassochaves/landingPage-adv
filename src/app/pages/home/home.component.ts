@@ -9,28 +9,29 @@ import { AdvogadoInforComponent } from "../../components/advogado-infor/advogado
 import { ContentfullApiService } from '../../services/contentfull-api.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
-    imports: [CommonModule, FooterComponent, HeaderComponent, ContactComponent, AreaAtuacaoComponent, AreaAtuacaoDestaqueComponent, AdvogadoInforComponent]
+    imports: [CommonModule, FooterComponent, HeaderComponent, ContactComponent, AreaAtuacaoComponent, AreaAtuacaoDestaqueComponent, AdvogadoInforComponent, RouterLink]
 })
 export class HomeComponent implements OnInit{
-  meusDadosApi$: Observable<any> | undefined;
-  inforProf$: Observable<any> | undefined;
-
+  areaAtuacaoDestaque: boolean = false;
+  meusDadosApi$!: Observable<any>;
 
   whatsapp: string = environment.API_WHATSAPP;
 
   constructor(private contenfullApi: ContentfullApiService){}
 
   ngOnInit(): void {
-    // this.meusDadosApi$ = this.contenfullApi.obterDados();
-    this.inforProf$ = this.contenfullApi.obterDadosPorId('2ajUWvny6HtH4hPM48eQ76');
-    // console.log(this.contenfullApi.obterDadosPorCampos('ix1luph72omg'));
+    this.meusDadosApi$ = this.contenfullApi.obterDados();
   }
-  
+
+
+   exibirareaAtuacaoDestaque() {
+     this.areaAtuacaoDestaque = true;
+   }
 }
