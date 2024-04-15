@@ -227,26 +227,6 @@ a, a:hover {
 }
 
 /* List */
-.list-bullets {
-  list-style: none;
-}
-
-.list-bullets li {
-  display: flex;
-  align-items: center;
-}
-
-.list-bullets li::before {
-  content: '';
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: $primary-color;
-  border: 2px solid $hover-color;
-  display: block;
-  margin-right: 1rem;
-}
-
 .count-box {
   padding: 15px 0;
   width: 100%;
