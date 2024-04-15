@@ -1,13 +1,14 @@
 <app-header></app-header>
 
+<main>
 <!-- ======= Hero Section ======= -->
-<section *ngIf="meusDadosApi$ | async as meusDadosApi" id="hero" class="section-hero d-flex align-items-center justify-content-center">
+<section  id="hero" class="section-hero d-flex align-items-center justify-content-center">
   <div class="container" data-aos="fade-up">
 
     <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
       <div class="col-xl-6 col-lg-8">
         <h3><span>Bem vindo a</span></h3>
-        <h1>Agostinho Lima</h1>
+        <h1>{{inforPagina.nome}}</h1>
         <h2>Advocacia Previdenciária</h2>
         <div class="btnMain">
           <a href="{{whatsapp}}" class="btn btn-lg get-started-btn" target="_blank">Falar com o Advogado</a>
@@ -16,7 +17,7 @@
 
     </div>
 
-    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+    <div *ngIf="meusDadosApi$ | async as meusDadosApi" class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
       @for (meusDados of meusDadosApi.items; track $index) {
       <div class="col-xl-3 col-md-4">
         <div class="icon-box">
@@ -30,7 +31,6 @@
   </div>
 </section><!-- End Hero -->
 
-<main id="main">
   <app-area-atuacao-destaque></app-area-atuacao-destaque>
 
   <!-- ======= Seção sobre ======= -->
@@ -96,7 +96,7 @@
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
           <p class="text-justify">
-            Nosso escritório conta com larga experiência nesta área do direito, há muitos anos atuando na esfera judicial de forma a garantir a correta concessão e manutenção de benefícios previdenciários e assistenciais, possuindo, inclusive, um trabalho diferenciado e especializado em revisões de benefícios dos trabalhadores urbanos, incluindo pensões especiais para ex-combatentes. Essa atuação abrange não só as relações com o Regime Geral de Previdência (INSS), mas, também, as estabelecidas com Regimes Próprios (União, Estados e Municípios) e Previdências Privadas
+            {{inforPagina.sobreEscritorio}}
           </p>
 
         </div>
@@ -128,10 +128,7 @@
   </section><!-- End Team Section -->
 
   <app-contact></app-contact>
-</main>
 <!-- End #main -->
 
 <app-footer></app-footer>
-<!-- <div *ngIf="meusDadosApi$ | async as meusDadosApi">
-<pre>{{meusDadosApi | json}}</pre>
-</div> -->
+</main>

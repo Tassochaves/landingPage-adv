@@ -10,6 +10,7 @@ import { ContentfullApiService } from '../../services/contentfull-api.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { InforPaginaService } from '../../services/infor-pagina.service';
 
 @Component({
     selector: 'app-home',
@@ -19,19 +20,25 @@ import { RouterLink } from '@angular/router';
     imports: [CommonModule, FooterComponent, HeaderComponent, ContactComponent, AreaAtuacaoComponent, AreaAtuacaoDestaqueComponent, AdvogadoInforComponent, RouterLink]
 })
 export class HomeComponent implements OnInit{
-  areaAtuacaoDestaque: boolean = false;
+  inforPagina!: any;
   meusDadosApi$!: Observable<any>;
 
   whatsapp: string = environment.API_WHATSAPP;
 
-  constructor(private contenfullApi: ContentfullApiService){}
+  constructor(
+    private contenfullApi: ContentfullApiService,
+    private inforPaginaService: InforPaginaService){
+    }
 
   ngOnInit(): void {
     this.meusDadosApi$ = this.contenfullApi.obterDados();
+    console.log(this.obterInforLocal());
   }
 
-
-   exibirareaAtuacaoDestaque() {
-     this.areaAtuacaoDestaque = true;
+   obterInforLocal(){
+     this.inforPaginaService.obterInforPagina().subscribe(
+      (response: any) =>{
+        this.inforPagina = response;
+      });
    }
 }

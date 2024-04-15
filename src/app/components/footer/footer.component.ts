@@ -8,6 +8,6 @@ import { environment } from '../../../environments/environment.development';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
-export class FooterComponent {
+export class FooterComponent{
   whatsapp: string = environment.API_WHATSAPP;
 }

@@ -1,7 +1,7 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { createClient } from 'contentful';
 import { environment } from '../../environments/environment.development';
-import { Observable, from, map, of} from 'rxjs';
+import { Observable, from} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
