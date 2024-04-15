@@ -3,10 +3,16 @@
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.section-hero {
+  padding-top: 10.0rem !important;
+  overflow: hidden;
+}
+
 #hero {
   width: 100%;
   min-height: 100vh;
-  background: url("https://cdn.pixabay.com/photo/2020/12/05/14/08/man-5806012_1280.jpg") top center;
+  background: url("../../../assets/img/fundoPrincipal.jpg") top center;
+
   background-size: cover;
   position: relative;
 }
@@ -23,7 +29,7 @@
 
 #hero .container {
   position: relative;
-  padding-top: 74px;
+ 
   text-align: center;
 }
 
@@ -135,7 +141,7 @@
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2018/09/09/18/04/judge-3665164_1280.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/img/fundoSecundario.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }

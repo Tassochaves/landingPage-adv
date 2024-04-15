@@ -2,7 +2,10 @@
 /*--------------------------------------------------------------
 # secao-atuacao
 --------------------------------------------------------------*/
-
+section {
+  padding: 2.0rem 0;
+  overflow: hidden;
+}
 .secao-atuacao .content h3 {
   font-weight: 700;
   font-size: 34px;
@@ -14,13 +17,13 @@
 }
 
 .secao-atuacao .content .count-box {
-  padding: 15px 0;
+  padding: 10px 0;
   width: 100%;
 }
 
 .secao-atuacao .content .count-box i {
   display: block;
-  font-size: 30px;
+  font-size: 25px;
   color: $primary-color;
   float: left;
 }
@@ -33,15 +36,16 @@
 }
 
 .secao-atuacao .content .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 50px;
-  font-size: 14px;
+  padding: 10px 0 0 0;
+  margin: 0 0 0 35px;
+  font-size: 15px;
   color: $secondary-text-color;
 }
 
 .secao-atuacao .image {
+  padding-top: 2.0rem;
   background-size: cover;
-  min-height: 400px;
+  min-height: 15.0rem;
 }
 
 @media (max-width: 991px) {
@@ -54,19 +58,11 @@
   .secao-atuacao .image img {
     max-width: 100%;
   }
-
-  .secao-atuacao .content h3{
-    padding-top: 20px;
-  }
 }
 
 @media (max-width: 667px) {
   .secao-atuacao .image img {
-    max-width: 100%;
-  }
-
-  .secao-atuacao .content h3{
-    padding-top: 20px;
+    max-width: 90%;
   }
 }
 
@@ -75,4 +71,9 @@ img {
   border-radius: 5px;
   max-width: 90%;
   height: auto;
+}
+
+.row{
+  margin: 0;
+  padding: 0;
 }

@@ -1,81 +1,37 @@
   <!-- ======= Seção atuaçao ======= -->
-  <section id="dir_previdenciario" class="secao-atuacao">
+  <section *ngIf="areaDestaque$ | async as meusDadosApi" class="secao-atuacao">
     <div class="container" data-aos="fade-up">
-      <div class="row no-gutters">
+      <div class="row">
         <div  id="wrap" class="image col-xl-5 d-flex">
-          <img src="https://cdn.pixabay.com/photo/2022/09/17/20/43/work-card-7461817_1280.jpg" alt="no image">
+          <div *ngFor="let item of meusDadosApi.fields.imagem" >
+            <img [src]="item.fields.file.url">
+          </div>
         </div>
         <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left"
           data-aos-delay="100">
           <div class="content d-flex flex-column justify-content-center">
-            <h3>Direito previdenciário</h3>
-            <p>
-              Conquistar seus direitos previdenciários não precisa ser uma batalha. Com o [Nome do Escritório de
-              Advocacia] ao seu lado, você terá o apoio de uma equipe experiente e dedicada para te guiar nessa jornada.
-            </p>
+            <h3>{{meusDadosApi.fields.nomeDaAreaDeAtuacao}}</h3>
+            <p>{{meusDadosApi.fields.descricaoDaAreaDeAtuacao}}</p>
             <div class="row">
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
+
+              <div *ngFor="let item of meusDadosApi.fields.listaDeServicos" class="col-md-6 d-md-flex align-items-md-stretch">
                 <div class="count-box">
-                  <i class="bi bi-check-square-fill"></i>
+                  <i class="fa fa-check-circle"></i>
                   <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2"
                     class="purecounter"></span>
-                  <p><strong>Aposentadorias</strong> Auxílio na escolha da modalidade ideal, revisão de benefícios e
-                    planejamento previdenciário.</p>
+                  <p><strong>{{item}}</strong></p>
                 </div>
               </div>
-
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-check-square-fill"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2"
-                    class="purecounter"></span>
-                  <p><strong>Auxílios</strong> Auxílio-doença, auxílio-acidente, auxílio-reclusão e outros benefícios
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-check-square-fill"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="4"
-                    class="purecounter"></span>
-                  <p><strong>Pensão por morte</strong> Assessoria completa para garantir o recebimento do benefício</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-check-square-fill"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4"
-                    class="purecounter"></span>
-                  <p><strong>Revisão de benefícios</strong> Busca por valores atrasados ou indevidamente pagos</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-check-square-fill"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4"
-                    class="purecounter"></span>
-                  <p><strong>Ações judiciais</strong> Atuação em todas as instâncias do Poder Judiciário</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-check-square-fill"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4"
-                    class="purecounter"></span>
-                  <p><strong>Ações judiciais</strong> Atuação em todas as instâncias do Poder Judiciário</p>
-                </div>
-              </div>
-
             </div>
           </div><!-- End .content-->
         </div>
       </div>
 
     </div>
+
+    <!-- <div *ngIf="meusDadosApi$ | async as meusDadosApi">
+      <pre>{{meusDadosApi.fields | json}}</pre>
+    </div> -->
   </section>
   <!-- Fim Seção atuaçao -->
 

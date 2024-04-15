@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ContentfullApiService } from '../../services/contentfull-api.service';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,13 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './advogado-infor.component.html',
   styleUrl: './advogado-infor.component.scss'
 })
-export class AdvogadoInforComponent implements OnInit{
-  meusDadosApi$: Observable<any> | undefined;
-
-  constructor(private contenfullApi: ContentfullApiService){}
-
-  ngOnInit(): void {
-    this.meusDadosApi$ = this.contenfullApi.obterDados();
-  }
+export class AdvogadoInforComponent{
 
 }

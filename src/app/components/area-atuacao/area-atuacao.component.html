@@ -1,101 +1,29 @@
   <!-- ======= Seção area atuações ======= -->
-  <section id="atuacao" class="area">
-    <div class="container" data-aos="fade-up">
+  <section *ngIf="meusDadosApi$ | async as meusDadosApi" id="atuacao" class="area">
+    <div class="container py-4" data-aos="fade-up">
 
       <div class="section-title">
         <h2>Áreas de atuação</h2>
         <p>Confira nossas áreas de atuação</p>
       </div>
+      @for (meusDados of meusDadosApi.items; track $index) {
+      <article class="postcard light blue">
+        <div class="postcard__text t-dark">
+          <div class="count-box">
+            <i class="fa fa-balance-scale"></i>
 
-      <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box">
-            <div class="icon"><img src="/assets/icons/icon-lei.png"></div>
-            <h4>Direito Previdenciário</h4>
-            <p>O Direito Previdenciário é um ramo do direito público surgido da conquista dos direitos sociais no fim do século XIX e início do século XX. Seu objetivo é o estudo e a regulamentação do instituto seguridade social.</p>
-            <!-- Button trigger modal -->
-            <a type="button" class="btn btn-sm btnMaisInfor" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Mais informações
-            </a>
+              <h1 class="postcard__title blue"><a>{{meusDados.fields.nomeDaAreaDeAtuacao}}</a></h1>
           </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">{{meusDados.fields.descricaoDaAreaDeAtuacao}}</div>
+          <ul *ngFor="let item of meusDados.fields.listaDeServicos" class="list-bullets">
+            <li class="mb-2">{{item}}</li>
+          </ul>
         </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">
-            <div class="icon"><img src="/assets/icons/icon-lei.png"></div>
-            <h4>Defesa de Execução Fiscal</h4>
-            <p>Análise minuciosa e com agilidade para seu caso, identificando oportunidades de defesas para redução parcial ou anulação total do débito, evitando bloqueio judicial de conta corrente ou penhora de bens.</p>
-            <!-- Button trigger modal -->
-            <a type="button" class="btn btn-sm btnMaisInfor" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Mais informações
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">
-            <div class="icon"><img src="/assets/icons/icon-lei.png"></div>
-            <h4>Direito Tributário</h4>
-            <p>Nosso escritório conta com advogados especialistas que atuam na representação de pessoas físicas e jurídicas em processos administrativos fiscais nas esferas federal, estadual e municipal.</p>
-            <!-- Button trigger modal -->
-            <a type="button" class="btn btn-sm btnMaisInfor" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Mais informações
-            </a>
-          </div>
-        </div>
-
-      </div>
-
+      </article>
+    }
     </div>
   </section>
   <!-- Fim Seção area atuações -->
 
-  <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="staticBackdropLabel">Direito Previdenciário</h1>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <ol class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">Aposentadorias</div>
-              Auxílio na escolha da modalidade ideal, revisão de benefícios e planejamento previdenciário.
-            </div>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">Pensão por morte</div>
-            Assessoria completa para garantir o recebimento do benefício
-          </div>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">Ações judiciais</div>
-            Atuação em todas as instâncias do Poder Judiciário
-          </div>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">Auxílios </div>
-            Auxílio-doença, auxílio-acidente, auxílio-reclusão e outros benefícios
-          </div>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div class="fw-bold">Revisão de benefícios</div>
-            Busca por valores atrasados ou indevidamente pagos
-          </div>
-        </li>
-      </ol>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-lg btn-outline-warning btn-modal">Falar com o advogado</button>
-    </div>
-  </div>
-</div>
-</div>
+
