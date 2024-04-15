@@ -1,7 +1,7 @@
   <!-- ======= Seção atuaçao ======= -->
-  <section *ngIf="areaDestaque$ | async as meusDadosApi" id="dir_previdenciario" class="secao-atuacao">
+  <section *ngIf="areaDestaque$ | async as meusDadosApi" class="secao-atuacao">
     <div class="container" data-aos="fade-up">
-      <div class="row no-gutters">
+      <div class="row">
         <div  id="wrap" class="image col-xl-5 d-flex">
           <div *ngFor="let item of meusDadosApi.fields.imagem" >
             <img [src]="item.fields.file.url">
@@ -16,7 +16,7 @@
 
               <div *ngFor="let item of meusDadosApi.fields.listaDeServicos" class="col-md-6 d-md-flex align-items-md-stretch">
                 <div class="count-box">
-                  <i class="bi bi-check-square-fill"></i>
+                  <i class="fa fa-check-circle"></i>
                   <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2"
                     class="purecounter"></span>
                   <p><strong>{{item}}</strong></p>

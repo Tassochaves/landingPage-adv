@@ -4,11 +4,6 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
-}
-
 a {
   color: $primary-color;
   text-decoration: none;
@@ -19,21 +14,11 @@ a:hover {
   text-decoration: none;
 }
 
-
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
-
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 2.0rem 0;
   overflow: hidden;
 }
 
@@ -99,4 +84,6 @@ section {
 
 p{
   text-align: justify;
+  font-size: 17px;
+  font-weight: 500;
 }

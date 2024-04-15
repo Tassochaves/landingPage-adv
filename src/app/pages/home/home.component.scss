@@ -3,6 +3,11 @@
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.section-hero {
+  padding-top: 10.0rem !important;
+  overflow: hidden;
+}
+
 #hero {
   width: 100%;
   min-height: 100vh;
@@ -24,7 +29,7 @@
 
 #hero .container {
   position: relative;
-  padding-top: 74px;
+ 
   text-align: center;
 }
 

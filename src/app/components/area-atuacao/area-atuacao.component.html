@@ -8,21 +8,16 @@
       </div>
       @for (meusDados of meusDadosApi.items; track $index) {
       <article class="postcard light blue">
-        <a class="postcard__img_link" href="#">
-          <div class="postcard__img_link" *ngFor="let item of meusDados.fields.imagem" >
-            <img  [src]="item.fields.file.url">
-          </div>
-        </a>
         <div class="postcard__text t-dark">
-          <h1 class="postcard__title blue"><a>{{meusDados.fields.nomeDaAreaDeAtuacao}}</a></h1>
+          <div class="count-box">
+            <i class="fa fa-balance-scale"></i>
+
+              <h1 class="postcard__title blue"><a>{{meusDados.fields.nomeDaAreaDeAtuacao}}</a></h1>
+          </div>
           <div class="postcard__bar"></div>
           <div class="postcard__preview-txt">{{meusDados.fields.descricaoDaAreaDeAtuacao}}</div>
-          <ul class="postcard__tagbox">
-            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
-            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-            <li class="tag__item play blue">
-              <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-            </li>
+          <ul *ngFor="let item of meusDados.fields.listaDeServicos" class="list-bullets">
+            <li class="mb-2">{{item}}</li>
           </ul>
         </div>
       </article>

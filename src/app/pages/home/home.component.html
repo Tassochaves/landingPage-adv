@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <!-- ======= Hero Section ======= -->
-<section *ngIf="meusDadosApi$ | async as meusDadosApi" id="hero" class="d-flex align-items-center justify-content-center">
+<section *ngIf="meusDadosApi$ | async as meusDadosApi" id="hero" class="section-hero d-flex align-items-center justify-content-center">
   <div class="container" data-aos="fade-up">
 
     <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
@@ -21,7 +21,7 @@
       <div class="col-xl-3 col-md-4">
         <div class="icon-box">
           <img width="48" height="48" src="https://img.icons8.com/fluency/48/scales.png" alt="scales"/>
-          <h3><a href="#dir_previdenciario">{{meusDados.fields.nomeDaAreaDeAtuacao}}</a></h3>
+          <h3><a>{{meusDados.fields.nomeDaAreaDeAtuacao}}</a></h3>
         </div>
       </div>
     }
