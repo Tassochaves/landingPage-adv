@@ -2,7 +2,7 @@
 
 <main>
 <!-- ======= Hero Section ======= -->
-<section  id="hero" class="section-hero d-flex align-items-center justify-content-center">
+<section *ngIf="inforPagina as inforPagina"  id="hero" class="section-hero d-flex align-items-center justify-content-center">
   <div class="container" data-aos="fade-up">
 
     <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
@@ -34,7 +34,7 @@
   <app-area-atuacao-destaque></app-area-atuacao-destaque>
 
   <!-- ======= Seção sobre ======= -->
-  <section id="sobre" class="about">
+  <section *ngIf="inforPagina as inforPagina" id="sobre" class="about">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <h2>Conheça</h2>

@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.meusDadosApi$ = this.contenfullApi.obterDados();
-    console.log(this.obterInforLocal());
+    this.obterInforLocal();
   }
 
    obterInforLocal(){

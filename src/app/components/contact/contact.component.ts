@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { InforPaginaService } from '../../services/infor-pagina.service';
 import { CommonModule } from '@angular/common';
 
@@ -10,12 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit{
-  inforPagina!: any;
+  inforPagina: any;
 
   constructor(private inforPaginaService: InforPaginaService){}
 
   ngOnInit(): void {
-    console.log(this.obterInforLocal());
+    this.obterInforLocal();
   }
 
    obterInforLocal(){

@@ -3,7 +3,7 @@
   <p>Advogado</p>
 </div>
 
-<div class="container">
+<div *ngIf="inforPagina as inforPagina" class="container">
   <img
     src="https://cdn.pixabay.com/photo/2015/07/20/12/57/ambassador-852766_1280.jpg"
     alt="adv" />
@@ -17,7 +17,7 @@
 
 </div>
 
-<div class="texto-mobile responseMobile">
+<div *ngIf="inforPagina as inforPagina" class="texto-mobile responseMobile">
   <h1 class="section-title">Dr. {{inforPagina.nome}}</h1>
   <p>{{inforPagina.resumoProfissional}}</p>
 </div>

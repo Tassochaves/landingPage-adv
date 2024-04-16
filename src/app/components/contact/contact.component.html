@@ -1,5 +1,5 @@
 <!-- ======= Contact Section ======= -->
-<section id="contatos" class="contact">
+<section *ngIf="inforPagina as inforPagina" id="contatos" class="contact">
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
@@ -21,7 +21,7 @@
           <div class="address">
             <i class="bi bi-geo-alt"></i>
             <h4>Localização:</h4>
-            <p>{{inforPagina.lacalizacao}}</p>
+            <p>{{inforPagina.localizacao}}</p>
           </div>
 
           <div class="email">
@@ -42,7 +42,7 @@
 
       <div class="col-lg-8 mt-5 mt-lg-0">
 
-        <form action="" method="post" role="form" class="email-form">
+        <form action="https://api.staticforms.xyz/submit" method="post" role="form" class="email-form">
           <div class="row">
             <div class="col-md-6 form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Seu nome" required>
@@ -57,12 +57,32 @@
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
           </div>
-          <button id="liveToastBtn" class="btn" type="submit">Enviar mensagem</button>
+          <input type="hidden" name="accessKey" value="71aede06-f2b7-4b6e-b01f-9830c7ff22cf">
+          <input type="hidden" name="subject" value="Contact us from - example.com" />
+          <input type="hidden" name="replyTo" value="@">
+          <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
+          <button class="btn" type="submit">Enviar mensagem</button>
         </form>
 
       </div>
 
     </div>
+
+    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
 
   </div>
 </section><!-- End Contact Section -->
