@@ -1,7 +1,19 @@
 
   <!-- Modal -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <p>Mensagem enviada com sucesso!.</p>
+  <div class="modal" id="myModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="bi bi-bell-fill fa-2x"></i>
+          <h5 class="modal-title">Mensagem enviada!</h5>
+          <button routerLink="" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Entraremos em contato com você o mais breve possível, através do e-mail que você forneceu.</p>
+        </div>
+        <div class="modal-footer">
+          <button routerLink="" type="button" class="btn btnMsg" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
     </div>
   </div>
