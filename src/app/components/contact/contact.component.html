@@ -57,10 +57,10 @@
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
           </div>
-          <input type="hidden" name="accessKey" value="71aede06-f2b7-4b6e-b01f-9830c7ff22cf">
-          <input type="hidden" name="subject" value="Contact us from - example.com" />
+          <input type="hidden" name="accessKey" value={{accessKeyStaticForms}}>
+          <input type="hidden" name="subject" value="Envio de formulário do seu site" />
           <input type="hidden" name="replyTo" value="@">
-          <input type="hidden" name="redirectTo" value="https://example.com/contact/success">
+          <input type="hidden" name="redirectTo" value={{redirectSendMsg}}>
           <button class="btn" type="submit">Enviar mensagem</button>
         </form>
 

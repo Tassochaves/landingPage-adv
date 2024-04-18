@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { InforPaginaService } from '../../services/infor-pagina.service';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit{
+  accessKeyStaticForms = environment.STATICFORMS_KEY;
+  redirectSendMsg = environment.REDIRECT_SEND_MSG;
   inforPagina: any;
 
   constructor(private inforPaginaService: InforPaginaService){}
