@@ -3,9 +3,7 @@
     <div class="container" data-aos="fade-up">
       <div class="row">
         <div  id="wrap" class="image col-xl-5 d-flex">
-          <div *ngFor="let item of meusDadosApi.fields.imagem" >
-            <img [src]="item.fields.file.url">
-          </div>
+            <img [src]="meusDadosApi.fields.imagem.fields.file.url">
         </div>
         <div class="col-xl-7 ps-4 ps-lg-5 pe-4 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left"
           data-aos-delay="100">
